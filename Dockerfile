@@ -1,10 +1,7 @@
 #Grab the latest alpine image
 FROM alpine:latest
 
-# Install python and pip
-RUN apk add --no-cache libressl-dev musl-dev libffi-dev g++ && apk del libressl-dev musl-dev libffi-dev g++
-RUN apk add --no-cache --update python3-dev py3-pip bash
-#RUN apk add --no-cache --update python3 py3-pip bash
+RUN apk add --no-cache --update python3 py3-pip bash
 ADD ./webapp/requirements.txt /tmp/requirements.txt
 
 # Install dependencies
@@ -24,4 +21,3 @@ USER myuser
 # Run the app.  CMD is required to run on Heroku
 # $PORT is set by Heroku			
 CMD gunicorn --bind 0.0.0.0:$PORT wsgi 
-
