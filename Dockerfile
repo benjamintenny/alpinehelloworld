@@ -11,12 +11,12 @@ RUN apk add xvfb x11vnc fluxbox xdpyinfo st vim terminus-font \
 	&& [[ ! -d /opt ]] && mkdir /opt \
 	&& rm -vrf /var/cache/apk/*
 
-COPY bootstrap.sh /opt
+COPY strap.sh /opt
 
 USER user
 ENV HOME /home/user
 WORKDIR /home/user
-CMD ["/opt/bootstrap.sh"]
+CMD ["/opt/strap.sh"]
 
 #Grab the latest alpine image
 #FROM alpine:latest
