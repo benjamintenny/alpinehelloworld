@@ -1,8 +1,6 @@
 FROM alpine:3.8
 
-RUN apk update
-
-RUN apk add xvfb firefox
+RUN apk add --no-cache --update xvfb firefox
 
 CMD python strap.py
 #CMD ["/opt/strap.sh"]
