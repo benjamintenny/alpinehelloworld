@@ -16,7 +16,7 @@ COPY strap.sh /opt
 USER user
 ENV HOME /home/user
 WORKDIR /home/user
-CMD ["/opt/strap.sh"]
+#CMD ["/opt/strap.sh"]
 
 #Grab the latest alpine image
 #FROM alpine:latest
