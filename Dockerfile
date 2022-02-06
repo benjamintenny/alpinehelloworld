@@ -4,7 +4,7 @@ RUN apk update
 
 RUN apk add xvfb firefox
 
-CMD strap.py
+CMD python strap.py
 #CMD ["/opt/strap.sh"]
 
 #Grab the latest alpine image
